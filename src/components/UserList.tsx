@@ -1,8 +1,4 @@
-// interface untuk masing-masing objek/user
-interface User {
-  id: number;
-  name: string;
-}
+import { User } from "../types/user";
 
 // interface untuk array user list
 interface UserListProps {
@@ -11,10 +7,12 @@ interface UserListProps {
 
 export default function UserList({ users }: UserListProps) {
   return (
-    <ul>
+    <ul id="user-list">
       {users.map((user) => (
         <li>
-          <button onClick={() => alert(user.name)}>{user.name}</button>
+          <h2>{user.username}</h2>
+          <p>phone : {user.phone}</p>
+          <p>email : {user.email}</p>
         </li>
       ))}
     </ul>
